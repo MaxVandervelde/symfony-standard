@@ -1,3 +1,4 @@
+# Symfony Files
 /web/bundles/
 /app/bootstrap.php.cache
 /app/cache/*
@@ -6,3 +7,14 @@
 /build/
 /vendor
 /composer.phar
+/web/uploads
+
+# IDE specific project files
+.nbproject
+*.iml
+*.ipr
+*.iws
+.idea/
+.classpath
+.project
+
