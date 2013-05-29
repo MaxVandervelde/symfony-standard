@@ -11,7 +11,10 @@ defined('APPLICATION_ENV')
     || define('APPLICATION_ENV', (getenv('APPLICATION_ENV') ? getenv('APPLICATION_ENV') : 'prod'));
 
 if (
-    APPLICATION_ENV !== 'dev'
+    (
+           'dev' !== APPLICATION_ENV
+        && 'staging' !== APPLICATION_ENV
+    )
     && (
            isset($_SERVER['HTTP_CLIENT_IP'])
         || isset($_SERVER['HTTP_X_FORWARDED_FOR'])
@@ -27,7 +30,7 @@ Debug::enable();
 
 require_once __DIR__.'/../app/AppKernel.php';
 
-$kernel = new AppKernel('dev', true);
+$kernel = new AppKernel(APPLICATION_ENV, true);
 $kernel->loadClassCache();
 Request::enableHttpMethodParameterOverride();
 $request = Request::createFromGlobals();
