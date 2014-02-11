@@ -300,6 +300,7 @@
     <!-- Symfony install assets -->
     <target name="symfony:assets:install">
         <exec passthru="true" checkreturn="true" command="${dir.app}/console assets:install web --symlink --env=dev" />
+        <exec passthru="true" checkreturn="true" command="${dir.app}/console assetic:dump --env=dev" />
     </target>
 
     <!-- Symfony install release assets -->
