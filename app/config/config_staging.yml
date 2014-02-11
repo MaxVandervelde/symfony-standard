@@ -21,8 +21,5 @@ monolog:
             type:  chromephp
             level: info
 
-assetic:
-    use_controller: true
-
 swiftmailer:
     delivery_address: %email_dev_delivery%
